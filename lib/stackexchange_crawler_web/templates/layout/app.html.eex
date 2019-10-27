@@ -17,6 +17,41 @@
         <h2 class="subtitle">
           Filter users by <strong>location</strong> and more!
         </h2>
+        <div class='box' style='background-color: #ddd'>
+          <form>
+            <div class='field is-horizontal'>
+              <div class='field-label is-normal'>
+                <label class='label'>Location</label>
+              </div>
+              <div class='field-body'>
+                <div class='field'>
+                  <p class='control'>
+                    <input type='text' class='input' placeholder='Brazil'></input>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class='list is-hoverable'>
+          <%= for user <- @users do %>
+            <a class='list-item'>
+              <article class="media">
+                <div class="media-left">
+                  <figure class="image is-64x64">
+                    <img src="<%= user.profile_image %>" alt="Image">
+                  </figure>
+                </div>
+                <div class='media-content'>
+                  <div class='content'>
+                    <p><strong> <%= user.display_name %> </strong></p>
+                    <small> <%= user.location %> </small>
+                  </div>
+                </div>
+              </article>
+            </a>
+          <% end %>
+        </div>
       </div>
     </div>
   </section>
